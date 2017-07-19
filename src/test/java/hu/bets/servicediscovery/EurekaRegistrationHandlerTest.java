@@ -2,7 +2,6 @@ package hu.bets.servicediscovery;
 
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
-import hu.bets.servicediscovery.UnableToRegisterServiceException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

@@ -3,13 +3,13 @@ package hu.bets.servicediscovery;
 import java.util.Properties;
 import java.util.concurrent.Future;
 
-public class DefaultEurekaFacade implements EurekaFacade {
+public class EurekaFacadeImpl implements EurekaFacade {
 
     private static final String EUREKA_URL = "EUREKA_URL";
     private static EurekaRegistrationHandler registrationHandler;
     private static EurekaServiceResolver serviceResolver;
 
-    public DefaultEurekaFacade(String eurekaUrl) {
+    public EurekaFacadeImpl(String eurekaUrl) {
         Properties props = new Properties();
         props.put("eureka.region", "default");
         props.put("eureka.preferSameZone", "true");
@@ -19,7 +19,7 @@ public class DefaultEurekaFacade implements EurekaFacade {
         System.getProperties().putAll(props);
     }
 
-    public DefaultEurekaFacade(Properties props) {
+    public EurekaFacadeImpl(Properties props) {
         System.getProperties().putAll(props);
     }
 
