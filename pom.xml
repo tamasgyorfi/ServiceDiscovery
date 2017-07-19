@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <scm>
         <url>https://github.com/tamasgyorfi/ServiceDiscovery.git</url>
         <connection>scm:git:git@github.com:tamasgyorfi/ServiceDiscovery.git</connection>
         <developerConnection>scm:git:git@github.com:tamasgyorfi/ServiceDiscovery.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>service-discovery-0.0.1</tag>
     </scm>
 
 
     <groupId>hu.bets</groupId>
     <artifactId>service-discovery</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
 
     <dependencies>
 
