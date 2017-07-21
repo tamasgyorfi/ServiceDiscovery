@@ -1,22 +1,23 @@
 package hu.bets.servicediscovery;
 
+import com.netflix.config.ConcurrentCompositeConfiguration;
+import com.netflix.config.DynamicPropertyFactory;
+
 import java.util.Properties;
 import java.util.concurrent.Future;
 
 public class EurekaFacadeImpl implements EurekaFacade {
 
-    private static final String EUREKA_URL = "EUREKA_URL";
+    private ConcurrentCompositeConfiguration configuration = new ConcurrentCompositeConfiguration();
+
     private static EurekaRegistrationHandler registrationHandler;
     private static EurekaServiceResolver serviceResolver;
 
     public EurekaFacadeImpl(String eurekaUrl) {
-        Properties props = new Properties();
-        props.put("eureka.region", "default");
-        props.put("eureka.preferSameZone", "true");
-        props.put("eureka.shouldUseDns", "false");
-        props.put("eureka.serviceUrl.default", eurekaUrl);
-
-        System.getProperties().putAll(props);
+        configuration.addProperty("eureka.region", "default");
+        configuration.addProperty("eureka.preferSameZone", "true");
+        configuration.addProperty("eureka.shouldUseDns", "false");
+        configuration.addProperty("eureka.serviceUrl.default", eurekaUrl);
     }
 
     public EurekaFacadeImpl(Properties props) {
@@ -40,12 +41,12 @@ public class EurekaFacadeImpl implements EurekaFacade {
     }
 
     private void setInstanceProperties(String name) {
-        System.getProperties().put("eureka.vipAddress", name);
-        System.getProperties().put("eureka.name", name);
+        configuration.addProperty("eureka.vipAddress", name);
+        configuration.addProperty("eureka.name", name);
 
-        System.getProperties().put("eureka.homePageUrl", "https://" + name + ".herokuapp.com");
-        System.getProperties().put("eureka.hostname", "https://" + name + ".herokuapp.com");
-
+        configuration.addProperty("eureka.homePageUrl", "https://" + name + ".herokuapp.com");
+        configuration.addProperty("eureka.hostname", "https://" + name + ".herokuapp.com");
+        DynamicPropertyFactory.initWithConfigurationSource(configuration);
     }
 
     @Override
