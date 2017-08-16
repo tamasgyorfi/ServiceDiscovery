@@ -6,13 +6,13 @@
         <url>https://github.com/tamasgyorfi/ServiceDiscovery.git</url>
         <connection>scm:git:git@github.com:tamasgyorfi/ServiceDiscovery.git</connection>
         <developerConnection>scm:git:git@github.com:tamasgyorfi/ServiceDiscovery.git</developerConnection>
-        <tag>service-discovery-0.0.5</tag>
+        <tag>HEAD</tag>
     </scm>
 
 
     <groupId>hu.bets</groupId>
     <artifactId>service-discovery</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6-SNAPSHOT</version>
 
     <dependencies>
 
