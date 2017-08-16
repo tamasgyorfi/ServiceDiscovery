@@ -8,6 +8,7 @@ public enum Services {
     BETS("football-bets"),
     MATCHES("football-matches"),
     SCORES("football-scores"),
+    USERS("football-users"),
     API_GATEWAY("football-api-gateway");
 
     private String serviceName;
